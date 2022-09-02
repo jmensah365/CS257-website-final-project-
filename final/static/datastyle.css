@@ -1,0 +1,241 @@
+html {
+	position: relative;
+	min-height: 100%;
+	background-color: gray;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0px;
+}
+
+h1 {
+	padding: 20px 20px 0px 20px;
+	font-size: 46px;
+	margin: 0;
+}
+
+header {
+	background-color: rgb(255, 129, 33);
+	color: white;
+	text-align: center;
+	padding-bottom: 1em;
+	margin: 0px -20px 0px -20px;
+}
+
+.navbar {
+	position: relative;
+	background-color: rgb(36, 36, 36);
+	text-align: center;
+	margin: 0px -20px 0px -20px;
+}
+
+.navbar a {
+	text-decoration: none;
+	color: rgb(255, 129, 33);
+	display: inline;
+	/*padding-top: 10%;
+	padding-left: 8%;*/
+	font-size: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.navbar a:hover {
+	color: white;
+}
+
+.content {
+	border-radius: 6px;
+	position: relative;
+	background-color: white;
+	/* margin: 20px 0px 120px 0px; */
+	text-align: center;
+}
+
+.content button {
+	height: 40px;
+	width: 210px;
+}
+
+.main {
+	margin: 0px 20px 120px 20px;
+}
+
+.short_list {
+	padding: 20px 0 10px 20px;
+	text-align: left;
+}
+
+#about_paragraph {
+	display: inline-block;
+	padding: 0px 15px 0 15px;
+	margin: 0 0 0 -15%;
+	width: 60%;
+	text-align: left;
+}
+
+#Author{
+    display: inline-block;
+    right: 2px;
+    margin: 10px;
+    width: 20%;
+    height: 20%;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.content h2 {
+	padding: 20px 0px 0px 0px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+#main_film_search {
+	font-size: 30px;
+}
+
+#film_search {
+	font-size: 30px;
+	position: absolute;
+	top: 2.25px;
+	right: 3%;
+}
+
+#results_film_search {
+	font-size: 30px;
+}
+
+.home_search_box {
+	position: relative;
+	margin-bottom: 5%;
+}
+
+.home_search_box button {
+	position: absolute;
+	top: 0px;
+	right: 8%;
+	display: inline;
+	height: 40px;
+	width: 50px;
+}
+
+.search_bar button {
+	position: absolute;
+	height: 30px;
+	width: 40px;
+	top: 2.25px;
+	right: 0%;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+.logos {
+	display: block;
+	bottom: 40px;
+}
+
+.icon_collection {
+	padding: 0px 0px 20px 0px;
+}
+
+footer {
+	text-align: center;
+	position: absolute;
+	bottom: 0%;
+	left: 0%;
+	right: 0%;
+	height: 120px;
+}
+
+footer p {
+	margin: 0;
+	padding-top: 25px;
+}
+
+.search_filter {
+	background-color: rgb(207, 207, 207);
+	border-radius: 6px;
+	display: block;
+	padding: 5px;
+	margin: 15px;
+	width: 450px;
+	text-align: center;
+}
+
+.search_filter label {
+	font-size: 18px;
+}
+
+#submit_button {
+	font-size: 18px;
+	background-color: rgb(255, 129, 33);
+	color: white;
+}
+
+.form_input {
+	padding: 10px 30px 10px 0px;
+	display: inline-block;
+}
+
+.page-control {
+	display: inline;
+	text-align: center;
+	margin: 0;
+	padding: 10px 0 10px 0;
+	font-size: 20px;
+}
+
+.results {
+	background-color: white;
+	border-radius: 6px;
+	display: block;
+	margin: 20px 0px 120px 0px;
+	padding: 0.5px 0px 10px 0px;
+}
+
+.results h1 {
+	font-size: 30px;
+	margin-left: -10px;
+}
+
+.results h2 {
+	display: inline-block;
+	font-size: 30px;
+	margin: 0px 15px 0px 0px;
+	padding-top: 0px;
+}
+
+.results h3 {
+	font-size: 15px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+.result_icon {
+	height: 7%;
+	width: 7%;
+}
+
+.results img {
+	display: inline-block;
+	padding-top: 10px;
+}
+
+.result-instance {
+	padding: 15px;
+	border-width: 0px 0px 5px 0px;
+	border-color: black;
+}
+
+#search_button_img {
+	bottom: 15px;
+	right: 15px;
+	padding-bottom: 10px;
+}

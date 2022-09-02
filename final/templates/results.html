@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='datastyle.css') }}">
+	
+		<title>{{ keyword }} - Search the Nexus</title>
+	</head>
+
+	<body>
+		<header>
+			<h1>Search results</h1>
+		</header>
+		<div class="main">
+			
+			<div class="navbar">
+				<!--<div class="current" style="top: 13px;">
+				</div>-->
+				<a href="data.html">HOME</a>
+				<a href="about.html">ABOUT</a>
+			</div>
+			
+			<div class="results">
+				
+				<div class="search_filter">
+					<div class="home_search_box">
+						<form action="\results.html" method="post">
+							<input type="hidden" name="year">
+							<input type="hidden" name="age" value="None">
+							<input type="hidden" name="page_number" value="1">
+							<input type="hidden" name="streaming-platform" value="None">
+							<input type="text" name="keyword" id="results_film_search" style="width= 80%;" placeholder="&quot;Beauty and the Beast&quot;"><br><br>
+							<button type="submit" id="button" href="#">
+								<img id="search_button_img" "height= 85%; width= 80%;" src="{{ url_for('static', filename='search_icon.png') }}">
+							</button>
+						</form>
+					</div>
+					<form action="\results.html" method = "post">
+						<input type="hidden" name="keyword" value="{{ keyword }}">
+						<input type="hidden" name="page_number" value="1">
+						<div class="form_input">
+							<label for="year">Year released</label>
+							<input type="number" min="1914" max="2021" name="year" style="width:45px;" maxlength="4">
+						</div>
+
+						<div class="form_input">
+							<label for="age">Age restrictions</label>
+							<select name="age">
+								<option value="None">None</option>
+								<option value="all">All</option>
+								<option value="7+">7+</option>
+								<option value="13+">13+</option>
+								<option value="18+">18+</option>
+							</select>
+						</div>
+
+						<div class="form_input">
+							<label for="streaming_platform">Streaming platform</label>
+							<select name="streaming_platform">
+								<option value="None">All</option>
+								<option value="netflix">Netflix</option>
+								<option value="hulu">Hulu</option>
+								<option value="prime-video">Prime Video</option>
+								<option value="disney-plus">Disney+</option>
+							</select>
+						</div>
+
+						<input type="submit" id="submit_button" alt="Press this button to filter your results" value="Filter Results">
+					</form>
+				</div>
+				
+				
+				<h1 style="font-size: 25px;">{{ length }} results for "{{ keyword }}"</h1>
+				<br><br>
+				
+				<h2 style="font-size: 23px;">Page {{ page_number }} of {{ total_pages }}</h2>
+				<br><br>
+	
+				
+				<form action="\results.html" method="post" id="previous">
+					<input type="hidden" name="page_number" value="{{ page_number - 1 }}">
+					<input type="hidden" name="length" value="{{ length }}">
+					<input type="hidden" name="keyword" value=" {{ keyword }}">
+					<input type="hidden" name="total_pages" value="{{ total_pages }}">
+					<input type="hidden" name="year" value="{{ year }}">
+					<input type="hidden" name="age" value="{{ age }}">
+					<input type="hidden" name="streaming_platform" value="{{ streaming_platform }}">
+				</form>
+				
+				<form action="\results.html" method="post" id="next">
+					<input type="hidden" name="page_number" value="{{ page_number + 1 }}">
+					<input type="hidden" name="length" value="{{ length }}">
+					<input type="hidden" name="keyword" value=" {{ keyword }}">
+					<input type="hidden" name="total_pages" value="{{ total_pages }}">
+					<input type="hidden" name="year" value="{{ year }}">
+					<input type="hidden" name="age" value="{{ age }}">
+					<input type="hidden" name="streaming_platform" value="{{ streaming_platform }}">
+				</form>
+				
+				{% if length >= 1 %}	
+					{% if page_number == 1 %}
+						<p class="page-control">< Previous Page</p>
+					{% else %}
+						<button class="page-control" type="submit" form="previous" value="Submit"> < Previous Page</button>
+					{% endif %}
+
+					<p class="page-control">{{ page_number }}</p>
+
+					{% if page_number == total_pages %}
+						<p class="page-control">Next Page ></p>
+					{% else %}
+						<button class="page-control" type="submit" form="next" value="Submit">Next Page ></button>
+					{% endif %}
+				{% endif %}
+				
+				
+				{% for film in results %}
+					<div class="result-instance">
+						<h2>{{ film[0] }}</h2>
+						{% if film[4] %}
+							<img class="result_icon" src="{{ url_for('static', filename='netflix.png') }}">
+						{% endif %}
+						{% if film[5] %}
+							<img class="result_icon" src="{{ url_for('static', filename='hulu.png') }}">
+						{% endif %}
+						{% if film[6] %}
+							<img class="result_icon" src="{{ url_for('static', filename='prime_video.png') }}">
+						{% endif %}
+						{% if film[7] %}
+							<img class="result_icon" src="{{ url_for('static', filename='disney_plus.png') }}">
+						{% endif %}
+						<h3>{{ film[1] }}</h3>
+						<h3>Age rating: {{ film[2] }}</h3>
+					</div>
+				{% endfor %}
+			</div>
+		
+			<footer>
+				<p>
+					© Jeremiah Mensah, Devin Lewis, and AJ LeSure 2021
+					<br>
+					<br>
+					CS 257 Software Design | Carleton College
+				</p>
+			</footer>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='datastyle.css') }}">
+		
+		<title>About the Dataset</title>
+	</head>
+	
+	<body>
+		<div class="main">
+			<header>
+				<h1>About our Dataset</h1>
+			</header>
+			
+			<div class="navbar">
+				<!--<div class="current" style="top: 67px;">
+				</div>-->
+				<a href="data.html">HOME</a>
+				<a href="about.html">ABOUT</a>
+			</div>
+			
+			<div class="content">
+				<div class="short_list">
+					<ul>
+						<li>Dataset authored by Ruchi Bhatia <a href="https://www.kaggle.com/ruchi798/movies-on-netflix-prime-video-hulu-and-disney" target="_blank">(Click here to view the dataset)</a></li>
+						<li>License: CC0</li>
+					</ul>
+				</div>
+				
+				<p>
+				The dataset we are using for this project was created by <a href="https://www.kaggle.com/ruchi798" target="_blank">Ruchi Bhatia</a> for public use
+				on the dataset hosting website <a href="https://www.kaggle.com/" target="_blank">Kaggle</a>. The dataset is in its 5th version and has been
+				updated within the last 30 days (as of 1/25/2022). All of the data is kept within a single .csv
+				file, "MoviesOnStreamingPlatforms.csv" which is approximately 506.07 KB in size. It is a truly
+				vast dataset, as even though 506 KB isn't at all large, it is 506 KB of solely text. For every
+				movie listed, there is data about what streaming platform it's on, it's Rotten Tomatoes rating,
+				age restrictions, and the year it was released.
+				</p>
+				<img id="Author" src="{{ url_for('static', filename='ruchi_bhatia.jpg') }}" alt="A picture of Ruchi Bhatia with her dog.">
+			</div>
+		
+			<footer>
+				<p>
+					© Jeremiah Mensah, Devin Lewis, and AJ LeSure 2021
+					<br>
+					<br>
+					CS 257 Software Design | Carleton College
+				</p>
+		</footer>
+		
+		</div>
+	</body>
+
+</html>

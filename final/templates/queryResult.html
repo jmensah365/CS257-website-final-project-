@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		{% if results == None or len < 1 %}
+			<title>No results found for '{{ movieTitle }}'</title>
+		{% else %}
+			<title>Results for '{{ movieTitle }}'</title>
+		{% endif %}
+	</head>
+	
+	<body>
+		<a href="/query-form">New Search</a>
+		{% if results == None or len < 1 %}
+			<h1> No results found for '{{ movieTitle }}'</h1>
+			<p>Check for spelling or punctuation errors in your search</p>
+		{% else %}
+			<h1>{{ len }} results found for '{{ movieTitle }}':</h1>
+			{% for item in results %}
+				<p>{{ item }}</p>
+			{% endfor %}
+		{% endif %}
+	</

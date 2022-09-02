@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='datastyle.css') }}">
+	
+		<title>The Entertainment Nexus</title>
+	</head>
+
+	<body>
+		<div class="main">
+			<header>
+				<h1>The Entertainment Nexus</h1>
+			</header>
+			
+			<div class="navbar">
+				<!--<div class="current" style="top: 13px;">
+				</div>-->
+				<a href="data.html">HOME</a>
+				<a href="about.html">ABOUT</a>
+			</div>
+			
+			<div class="content">
+				<h2>Start your search</h2>
+				<div class="home_search_box">
+					<form action="\results.html" method="post">
+						<input type="hidden" name="page_number" value="1">
+						<input type="hidden" name="year">
+						<input type="hidden" name="age" value="None">
+						<input type="hidden" name="streaming-platform" value="None">
+						<input type="text" name="keyword" id="main_film_search" style="width: 80%;" placeholder="&quot;Beauty and the Beast&quot;"><br><br>
+						<button type="submit" id="button" href="#">
+							<img src="{{ url_for('static', filename='search_icon.png') }}" height="100%" width="100%">
+						</button>
+						
+					</form>
+					
+				</div>
+				<button type="submit" value="Submit" form="options">All Movies and More Search Options</button>
+				<form action = "\search.html" method ="post" id="options">
+						<input type="hidden" name="streaming-platform" value="None">
+						<input type="hidden" name="year">
+						<input type="hidden" name="page_number" value="1">
+						<input type="hidden" name="age" value="None">
+						<input type="hidden" name="keyword" value="">
+				</form>
+				
+				<br><br>
+				
+				<div class="logos">
+					<img src="{{ url_for('static', filename='popcorn_icon.png') }}" alt="A simple picture of some popcorn" height="10%" width="10%">
+					<h3>Want to know where you can find your favorite films?</h3>
+					<h4>Then you're in the right place. The Entertainment Nexus has information on over 9,000 films across Netflix, Hulu, Amazon Prime Video, and Disney+.</h4>
+					<div class="icon_collection">
+						<img class="icon" src=" {{ url_for('static', filename='netflix.png') }}" alt="The Netflix logo" width="18%" height="18%">
+						<img class="icon" src="{{ url_for('static', filename='prime_video.png') }}" alt="The Prime Video logo" width="18%" height="18%">
+						<img class="icon" src="{{ url_for('static', filename='hulu.png') }}" alt="The Hulu logo" width="18%" height="18%">
+						<img class="icon" src="{{ url_for('static', filename='disney_plus.png') }}" alt="The Disney plus logo" width="18%" height="18%">
+					</div>
+				</div>
+			</div>
+			
+			<footer>
+				<p>
+					© Jeremiah Mensah, Devin Lewis, and AJ LeSure 2021
+					<br>
+					<br>
+					CS 257 Software Design | Carleton College
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
